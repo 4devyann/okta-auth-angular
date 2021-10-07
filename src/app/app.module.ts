@@ -42,7 +42,6 @@ const oktaAuth = new OktaAuth(authConfig.oidc);
         }
       } 
     },
-    { provide: APP_BASE_HREF, useValue: environment.appBaseHref },
   ],
   bootstrap: [AppComponent]
 })
