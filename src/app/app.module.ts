@@ -13,8 +13,6 @@ import { OktaAuthModule, OKTA_CONFIG } from '@okta/okta-angular';
 
 import authConfig from './config/auth-config'
 import { OktaAuth } from '@okta/okta-auth-js';
-import { environment } from 'src/environments/environment';
-import { APP_BASE_HREF } from '@angular/common';
 
 const oktaAuth = new OktaAuth(authConfig.oidc);
 
