@@ -33,10 +33,9 @@ const oktaAuth = new OktaAuth(authConfig.oidc);
       provide: OKTA_CONFIG, 
       useValue: {
         oktaAuth,
-        onAuthRequired: ( injector: Injector ) => {
+        onAuthRequired: ( oktaAuth: OktaAuth, injector: Injector) => {
           
           const router = injector.get(Router);
-          
           router.navigate(['/login']);
         }
       } 
