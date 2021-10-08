@@ -19,9 +19,13 @@ export class WelcomeComponent implements OnInit {
   }
 
   async ngOnInit() {
+    
     const isAuthenticated = await this.oktaAuth.isAuthenticated();
+    
     if (isAuthenticated) {
+      
       const userClaims = await this.oktaAuth.getUser();
+      
       this.userName = userClaims.name as string;
     }
   }

@@ -33,9 +33,10 @@ const oktaAuth = new OktaAuth(authConfig.oidc);
       provide: OKTA_CONFIG, 
       useValue: {
         oktaAuth,
-        onAuthRequired: ( oktaAuth: OktaAuth, injector: Injector) => {
+        onAuthRequired: ( injector: Injector ) => {
+          
           const router = injector.get(Router);
-          // Redirect the user to your custom login page
+          
           router.navigate(['/login']);
         }
       } 
